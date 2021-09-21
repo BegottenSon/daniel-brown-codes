@@ -1,0 +1,51 @@
+:root{
+	--blue: hsl(228, 57%, 56%);
+	--accent: hsl(349, 100%, 50%);
+	--soft-white: hsl(349, 100%, 95%);
+	--dark-blue: hsl(229, 23%, 14%);
+	--darker-blue: hsl(228, 16%, 7%);
+}
+
+::selection {
+	background-color:  hsl(349, 76%, 36%);
+}
+
+body {
+	margin: 0;
+	font-family: 'Quicksand', Helvetica Neue, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--soft-white);
+	background-color: var(--darker-blue);
+	background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg width='100%25' height='100%25' viewBox='0 0 1024 205' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cg transform='matrix(0.167837,0,0,0.167837,-1.26038,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,67.058,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,135.376,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,203.695,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,272.013,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,340.331,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,408.65,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,476.968,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,545.286,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,613.605,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,681.923,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,750.241,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,818.56,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,886.878,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3Cg transform='matrix(0.167837,0,0,0.167837,955.196,64.3958)'%3E%3Ccircle cx='208.726' cy='227.03' r='103.692' style='fill:rgb(26,27,36);'/%3E%3C/g%3E%3C/svg%3E");
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', Hevetica Neue, sans-serif;
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 2em;
+	color: var(--blue);
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: menlo, inconsolata, monospace;
+	font-size: calc(1em - 2px);
+	color: var(--soft-white);
+	background-color: hsl(350, 22%, 20%);
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
+
+@media (min-width: 400px) {
+	body {
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,1 @@
+export const allPosts = import.meta.glob("../routes/blog/posts/*.{md,svx}");
