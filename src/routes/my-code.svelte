@@ -7,9 +7,7 @@
 </svelte:head>
 
 <Transition>
-<main>
-    <!-- <h2><a href="better-attention">Your Music Deserves Better Attention</a></h2> -->
-    
+<main>    
     <h2><a href="music-streaming">Music Streaming Estimator</a></h2>
     <p> 
         I created a Numbers spreadsheet for estimating music streaming payouts. 
