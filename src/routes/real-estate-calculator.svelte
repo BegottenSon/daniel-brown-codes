@@ -1,17 +1,17 @@
 <script>
-    import Expenses from "$lib/REI-Calc/Expenses.svelte";
-    import Income from "$lib/REI-Calc/Income.svelte";
-    import LoanInfo from "$lib/REI-Calc/Loan-Info.svelte";
-    import Property from "$lib/REI-Calc/Property-Info.svelte";
-    import Purchase from "$lib/REI-Calc/Purchase.svelte";
+    import Expenses_Input from "$lib/REI-Calc/Expenses-Input.svelte";
+    import Income_Input from "$lib/REI-Calc/Income-Input.svelte";
+    import LoanInfo_Input from "$lib/REI-Calc/Loan-Info-Input.svelte";
+    import Property_Input from "$lib/REI-Calc/Property-Info-Input.svelte";
+    import Purchase_Input from "$lib/REI-Calc/Purchase-Input.svelte";
 </script>
 <svelte:head>REI Calculator</svelte:head>
 <section class="calculator">
     <h1>Real Estate Investor Calculator</h1>
-    <Property/>
-    <Purchase />
-    <LoanInfo />
-    <Income />
-    <Expenses />
+    <Property_Input/>
+    <Purchase_Input />
+    <LoanInfo_Input />
+    <Income_Input />
+    <Expenses_Input />
 </section>
 <a href="real-estate-analysis">Crunch the Numbers</a>
