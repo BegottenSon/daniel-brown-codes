@@ -15,3 +15,16 @@
     <Expenses_Input />
 </section>
 <a href="real-estate-analysis">Crunch the Numbers</a>
+
+<style>
+    a {
+        width: 50vw;
+        align-self: flex-end;
+        background-color: var(--accent);
+        border-radius: 4px;
+        margin-block: 2em;
+        padding: 0.6em;
+        text-align: center;
+        text-decoration: none;
+    }
+</style>

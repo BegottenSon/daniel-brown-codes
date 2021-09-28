@@ -2,41 +2,86 @@
     import { propertyTax, insurance, repairs, vacancy, management, capEx, electricity, gas, water, hoa, garbage, other } from "./calc-store";
 </script>
 
+<h2>Expenses</h2>
 <section id="expenses">
-    <h2>Expenses</h2>
-    <label for="propertyTax">Property tax:</label>
-    <input type="number" name="propertyTax" bind:value={$propertyTax}>
+    <div>
+        <label for="propertyTax">Property tax:</label>
+        <input type="number" name="propertyTax" bind:value={$propertyTax}>
+    </div>
 
-    <label for="insurance">Insurance:</label>
-    <input type="number" name="insurance" bind:value={$insurance}>
+    <div>
+        <label for="insurance">Insurance:</label>
+        <input type="number" name="insurance" bind:value={$insurance}>   
+    </div>
+    
+    <div>
+        <label for="repairs">Repairs & Maintanance:</label>
+        <input type="number" name="repairs" bind:value={$repairs}>
+    </div>
 
-    <label for="repairs">Repairs & Maintanance:</label>
-    <input type="number" name="repairs" bind:value={$repairs}>
+    <div>
+        <label for="vacancy">Vacancy:</label>
+        <input type="number" name="vacancy" bind:value={$vacancy} placeholder="%"> 
+    </div>
 
-    <label for="vacancy">Vacancy:</label>
-    <input type="number" name="vacancy" bind:value={$vacancy} placeholder="%">
+    <div>
+        <label for="capEx">Capital Expenditure:</label>
+        <input type="number" name="capEx" bind:value={$capEx}> 
+    </div>
 
-    <label for="capEx">Capital Expenditure:</label>
-    <input type="number" name="capEx" bind:value={$capEx}>
+    <div>
+        <label for="management">Management Fees:</label>
+        <input type="number" name="management" bind:value={$management}>
+    </div>
 
-    <label for="management">Management Fees:</label>
-    <input type="number" name="management" bind:value={$management}>
+    <div>
+        <label for="electricity">Electricity:</label>
+        <input type="number" name="electricity" bind:value={$electricity}>
+    </div>
 
-    <label for="electricity">Electricity:</label>
-    <input type="number" name="electricity" bind:value={$electricity}>
+    <div>
+        <label for="gas">Gas:</label>
+        <input type="number" name="gas" bind:value={$gas}>
+    </div>
 
-    <label for="gas">Gas:</label>
-    <input type="number" name="gas" bind:value={$gas}>
+    <div>
+        <label for="water">Water:</label>
+        <input type="number" name="water" bind:value={$water}>
+    </div>
 
-    <label for="water">Water:</label>
-    <input type="number" name="water" bind:value={$water}>
+    <div>
+        <label for="garbage">Garbage:</label>
+        <input type="number" name="garbage" bind:value={$garbage}>
+    </div>
 
-    <label for="garbage">Garbage:</label>
-    <input type="number" name="garbage" bind:value={$garbage}>
+    <div>
+        <label for="hoa">HOA Fees:</label>
+        <input type="number" name="hoa" bind:value={$hoa}>
+    </div>
 
-    <label for="hoa">HOA Fees:</label>
-    <input type="number" name="hoa" bind:value={$hoa}>
-
-    <label for="other">Other:</label>
-    <input type="number" name="other" bind:value={$other}>
+    <div>
+        <label for="other">Other:</label>
+        <input type="number" name="other" bind:value={$other}>
+    </div>
 </section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8em;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input {
+        appearance: none;
+        width: 50px;
+    }
+</style>

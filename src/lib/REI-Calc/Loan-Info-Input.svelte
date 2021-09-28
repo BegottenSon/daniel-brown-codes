@@ -16,6 +16,31 @@
 
     <label for="loanTerm">Loan Term:</label>
     <input type="number" name="loanTerm" bind:value={$loanTerm}>years
+    <a href="#income">Next: Income</a>
 </section>
 
-<a href="#income">Next: Income</a>
+<style>
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input {
+        appearance: none;
+        max-width: 64ch;
+    }
+
+    a {
+        align-self: flex-end;
+        background-color: var(--accent);
+        border-radius: 4px;
+        margin: 1em;
+        padding: 0.6em;
+        text-decoration: none;
+    }
+</style>

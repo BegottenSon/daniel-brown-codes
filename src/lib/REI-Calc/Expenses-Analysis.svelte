@@ -21,18 +21,19 @@
     let denominatorB = interest_rate / 12 * periodic_rate;
     let mortgage = (loan_amount / (denominatorA / denominatorB));
     let total_monthly_expenses = total_fixed_expenses + total_varible_expenses + mortgage;
+    let commaForDollars = /\B(?=(\d{3})+(?!\d))/g;
 </script>
 <section class="expenses">
     <section class="overview">
         <h2>Monthly Expenses Breakdown</h2>
         <div class="items breakdown-section">
             <h3 class="section-title">Total Expenses</h3>
-            <h3 class="items-amount">${total_monthly_expenses.toFixed(2)}</h3>
+            <h3 class="items-amount">${total_monthly_expenses.toFixed(2).replace(commaForDollars, ",")}</h3>
         </div>
     
         <div class="items">
             <h3 class="items-title">Mortgage</h3>
-            <h3 class="items-amount">${mortgage.toFixed(2)}</h3>
+            <h3 class="items-amount">${mortgage.toFixed(2).replace(commaForDollars, ",")}</h3>
         </div>
         <div class="items">
             <h3 class="items-title">Taxes</h3>
@@ -44,11 +45,11 @@
         </div>
         <div class="items">
             <h3 class="items-title">Varible Expenses</h3>
-            <h3 class="items-amount">${total_varible_expenses}</h3>
+            <h3 class="items-amount">${total_varible_expenses.toFixed(2).replace(commaForDollars, ",")}</h3>
         </div>
         <div class="items">
             <h3 class="items-title">Fixed Expenses</h3>
-            <h3 class="items-amount">${total_fixed_expenses}</h3>
+            <h3 class="items-amount">${total_fixed_expenses.toFixed(2).replace(commaForDollars, ",")}</h3>
         </div>
     </section>
     <section class="overview">
@@ -86,7 +87,7 @@
     <section class="overview">
         <div class="items breakdown-section">
             <h3 class="section-title">Varible Expenses</h3>
-            <h3 class="items-amount">${total_varible_expenses}</h3>
+            <h3 class="items-amount">${total_varible_expenses.toFixed(2).replace(commaForDollars, ",")}</h3>
         </div>
     
         <div class="items">
