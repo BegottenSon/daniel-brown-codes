@@ -1,5 +1,5 @@
 <script>
-    import { Analysis, Checkout } from "$lib/REI-Calc/calc-store";
+    import { Analysis, Checkout, propertyTax } from "$lib/REI-Calc/calc-store";
     import ExpensesAnalysis from "$lib/REI-Calc/Expenses-Analysis.svelte";    
     import Returns from "$lib/REI-Calc/Returns.svelte";
 
@@ -23,15 +23,23 @@
     let commaForDollars = /\B(?=(\d{3})+(?!\d))/g;
 </script>
 <main>
+    <h1>Property Investment Analysis</h1>
+    <div class="property">
+        <p>{Checkout.store(Analysis.property.address)}</p>
+        <p>{Checkout.store(Analysis.property.city)}, {Checkout.store(Analysis.property.state)}</p>
+        <p>{Checkout.store(Analysis.property.zipcode)}</p>
+    </div>
     <h2>Income</h2>
-    <p class="numbers">{total_income.toFixed(2).replace(commaForDollars, ",")}</p>
+    <p class="numbers">${total_income.toFixed(2).replace(commaForDollars, ",")}/mo</p>
     <h2>Mortgage Payment</h2>
-    <p class="numbers">{mortgage.toFixed(2).replace(commaForDollars, ",")}</p>
+    <p class="numbers">${mortgage.toFixed(2).replace(commaForDollars, ",")}/mo</p>
     <h2>Total Monthly Expenses</h2>
-    <p class="numbers">{total_monthly_expenses.toFixed(2).replace(commaForDollars, ",")}</p>
+    <p class="numbers">${total_monthly_expenses.toFixed(2).replace(commaForDollars, ",")}/mo</p>
     <h2>Monthly Cash Flow</h2>
-    <p class="numbers">{cash_flow.replace(commaForDollars, ",")}</p>
+    <p class="numbers">${cash_flow.replace(commaForDollars, ",")}/mo</p>
+    <hr>
     <ExpensesAnalysis />
+    <hr>
     <Returns />
 
 </main>
@@ -43,7 +51,35 @@
         background-color: rgb(210, 247, 232);
         color: rgb(104, 6, 79);
         width: 96vw;
+        padding-block-end: 10em;
     }
+
+    h1 {
+        text-align: center;
+        color: rgb(153, 13, 118);
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        margin-block-start: 0;
+    }
+
+    hr {
+        width:80%;
+    }
+
+    .property {
+        text-align: center;
+        margin-block-end: 1em;
+    }
+
+    .property p {
+        margin: 0.3em;
+    }
+
     .numbers {
         font-size: large;
         font-weight: bold;

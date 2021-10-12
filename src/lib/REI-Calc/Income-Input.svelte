@@ -29,15 +29,26 @@
 
     input {
         appearance: none;
-        max-width: 64ch;
+        background-color: var(--dark-blue);
+        color: var(--soft-white);
+        border: 2px solid var(--darker-blue);
+        border-radius: 4px;
+        height: 20px;
+        /* width: 60px; */
     }
 
     a {
         align-self: flex-end;
         background-color: var(--accent);
         border-radius: 4px;
-        margin: 1em;
+        margin: 2em;
         padding: 0.6em;
         text-decoration: none;
+    }
+
+    @media(max-width: 400px) {
+        a {
+            align-self: center;
+        }
     }
 </style>

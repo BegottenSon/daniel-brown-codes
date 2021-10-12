@@ -21,17 +21,17 @@
 
     <div>
         <label for="vacancy">Vacancy:</label>
-        <input type="number" name="vacancy" bind:value={$vacancy} placeholder="%"> 
+        <input type="number" class="perectange-input" name="vacancy" bind:value={$vacancy} placeholder="%"> 
     </div>
 
     <div>
         <label for="capEx">Capital Expenditure:</label>
-        <input type="number" name="capEx" bind:value={$capEx}> 
+        <input type="number" class="perectange-input" name="capEx" bind:value={$capEx}> 
     </div>
 
     <div>
         <label for="management">Management Fees:</label>
-        <input type="number" name="management" bind:value={$management}>
+        <input type="number" class="perectange-input" name="management" bind:value={$management}>
     </div>
 
     <div>
@@ -82,6 +82,23 @@
 
     input {
         appearance: none;
-        width: 50px;
+        background-color: var(--dark-blue);
+        color: var(--soft-white);
+        border: none;
+        border-radius: 4px;
+        width: 60px;
+    }
+
+    .perectange-input {
+        position: relative;
+    }
+
+    .perectange-input::after {
+        position: absolute;
+        bottom: 0;
+        right: 100%;
+        content: "A";
+        height: 20px;
+        width: 20px;
     }
 </style>

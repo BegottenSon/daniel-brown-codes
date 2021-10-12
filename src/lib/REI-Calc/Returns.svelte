@@ -13,8 +13,8 @@
     let denominatorA = periodic_rate - 1;
     let denominatorB = interest_rate / 12 * periodic_rate;
     let mortgage = (loan_amount / (denominatorA / denominatorB));
-    let cash_flow = (total_income - total_expenses - mortgage).toFixed(2);
-    let coc = (cash_flow * 12) / (Checkout.store(Analysis.purchase_info.closingCost) + Checkout.store(Analysis.loan_info.downPayment)) ;
+    let cash_flow = (total_income - total_expenses - mortgage);
+    let coc = (cash_flow * 12) / (Checkout.store(Analysis.purchase_info.closingCost) + Checkout.store(Analysis.loan_info.downPayment) + Checkout.store(Analysis.purchase_info.repairCost)) * 100 ;
     let cap = (noi / Checkout.store(Analysis.purchase_info.price)) * 100;
     let commaForDollars = /\B(?=(\d{3})+(?!\d))/g;
 
@@ -29,16 +29,24 @@
 
     <div class="segments">
         <h3>CoC Return</h3>
-        <p>{coc.toFixed(2)}%</p>    
+        <p>{coc === Infinity ? "Infinite Return" : coc.toFixed(2) + "%" }</p>    
     </div>
 
     <div class="segments">
         <h3>Cap Rate</h3>
-        <p>{cap}%</p>   
+        <p>{cap.toFixed(2)}%</p>   
     </div>
 </section>
 
 <style>
+    h3 {
+        margin: 0;
+    }
+    
+    p {
+        margin-block-start: 0;
+    }
+
     .returns {
         display: flex;
         gap: 1.5em;
