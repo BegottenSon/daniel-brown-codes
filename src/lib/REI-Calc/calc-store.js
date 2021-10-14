@@ -60,10 +60,6 @@ export function unsubscribeStore(store) {
 
 function addStores(keys) {
     let createdArray = Object.values(keys);
-    let mutatedArray = createdArray.map(n => unsubscribeStore(n))
-    .reduce((amount, store) => {
-        return amount + store
-    }, 0)
     let sumValue = createdArray.reduce((amount, store) => {
         return amount + unsubscribeStore(store)
     },0);

@@ -24,11 +24,13 @@
 </script>
 <main>
     <h1>Property Investment Analysis</h1>
-    <div class="property">
-        <p>{Checkout.store(Analysis.property.address)}</p>
-        <p>{Checkout.store(Analysis.property.city)}, {Checkout.store(Analysis.property.state)}</p>
-        <p>{Checkout.store(Analysis.property.zipcode)}</p>
-    </div>
+    {#if Checkout.store(Analysis.property.address)}
+        <div class="property">
+            <p>{Checkout.store(Analysis.property.address)}</p>
+            <p>{Checkout.store(Analysis.property.city)}, {Checkout.store(Analysis.property.state)}</p>
+            <p>{Checkout.store(Analysis.property.zipcode)}</p>
+        </div>
+    {/if}
     <h2>Income</h2>
     <p class="numbers">${total_income.toFixed(2).replace(commaForDollars, ",")}/mo</p>
     <h2>Mortgage Payment</h2>

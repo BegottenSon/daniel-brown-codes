@@ -8,7 +8,7 @@
     let loan_amount = Checkout.store(Analysis.purchase_info.price) - Checkout.store(Analysis.loan_info.downPayment);
 
     //FORMULAS
-    let noi = total_income - total_expenses;
+    let noi = (total_income - total_expenses) * 12;
     let periodic_rate = Math.pow((1 + interest_rate / 12), 360)
     let denominatorA = periodic_rate - 1;
     let denominatorB = interest_rate / 12 * periodic_rate;
