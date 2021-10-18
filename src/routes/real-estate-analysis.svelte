@@ -1,13 +1,14 @@
 <script>
-    import { Analysis, Checkout, propertyTax } from "$lib/REI-Calc/calc-store";
+    import { Analysis, Checkout } from "$lib/REI-Calc/calc-store";
     import ExpensesAnalysis from "$lib/REI-Calc/Expenses-Analysis.svelte";    
     import Returns from "$lib/REI-Calc/Returns.svelte";
+    import SaveProperty from "$lib/REI-Calc/Save-Property.svelte";
 
     //INSTANCES FOR SUBSCRIBING TO ANALYSIS
     let total_income = Checkout.add(Analysis.income);
     let total_fixed_expenses = Checkout.add(Analysis.fixed_expenses);
     let total_varible_expenses = Checkout.percentageSum(Analysis.varible_expenses);
-;
+
 
     //UNSUBSCRIBES FOR FORMULAS
     let interest_rate = Checkout.store(Analysis.loan_info.interest) / 100;
@@ -43,6 +44,7 @@
     <ExpensesAnalysis />
     <hr>
     <Returns />
+    <SaveProperty />
 
 </main>
 

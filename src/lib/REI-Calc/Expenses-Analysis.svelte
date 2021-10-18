@@ -10,7 +10,7 @@
     //UNSUBSCRIBES FOR FORMULAS
     let interest_rate = Checkout.store(Analysis.loan_info.interest) / 100;
     let loan_amount = Checkout.store(Analysis.purchase_info.price) - Checkout.store(Analysis.loan_info.downPayment);
-    let total_fixed_expenses = Checkout.add(Analysis.fixed_expenses);
+    let total_fixed_expenses = Checkout.add(Analysis.fixed_expenses) - Checkout.store(Analysis.fixed_expenses.insurance) - Checkout.store(Analysis.fixed_expenses.tax);
     let total_varible_expenses = Checkout.percentageSum(Analysis.varible_expenses);
     let property_tax = Checkout.store(Analysis.fixed_expenses.tax);
     let insurance = Checkout.store(Analysis.fixed_expenses.insurance);
