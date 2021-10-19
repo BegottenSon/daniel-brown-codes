@@ -15,13 +15,13 @@ export const appreciation = writable(0);
 
 //LOAN INFO
 export const downPayment = writable(0);
-export const interest = writable(6);
+export const interest = writable(3.5);
 export const points = writable(0);
 export const loanTerm = writable(30);
 
 //INCOME INFO
-export const monthlyIncome = writable(4000);
-export const laundry = writable(200);
+export const monthlyIncome = writable(2000);
+export const laundry = writable(0);
 export const custom = writable(0);
 
 // EXPENSES INFO

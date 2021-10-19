@@ -101,7 +101,7 @@
     .card {
         display: flex;
         justify-content: space-between;
-        height: 35vh;
+        height: 45vh;
         width: 20vw;
         flex-direction: column;
         padding: 1em;
@@ -117,6 +117,7 @@
 
     .cover-pic {
         opacity: 0.3;
+        filter: saturate(0.2);
     }
 
     section > h3 {
@@ -164,13 +165,14 @@
 
     .disclaimer {
         background-color: var(--dark-blue);
+        margin-block: 5em;
         padding: 1em;
         font-size: x-small;
     }
 
     @media(max-width: 600px) {
         .card {
-            height: 25vh;
+            height: 30vh;
             width: 40vw;
         }
     }
