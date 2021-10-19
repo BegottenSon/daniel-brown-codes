@@ -2,7 +2,6 @@
 	import Nav from '$lib/Nav.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import "../app.css"
-	export let segment;
 </script>
 
 <style>
@@ -32,7 +31,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Itim&family=Quicksand&family=Roboto:wght@900&display=swap" rel="stylesheet">
 </svelte:head>
 
-<Nav {segment}/>
+<Nav />
 
 <main>
 	<slot></slot>

@@ -16,22 +16,30 @@
     
     <div>
         <label for="repairs">Repairs & Maintanance:</label>
-        <input type="number" name="repairs" bind:value={$repairs}>
+        <div class="input-container">
+            <input type="number" name="repairs" bind:value={$repairs}> <span>%</span> 
+        </div>
     </div>
 
     <div>
         <label for="vacancy">Vacancy:</label>
-        <input type="number" class="perectange-input" name="vacancy" bind:value={$vacancy} placeholder="%"> 
+        <div class="input-container">
+            <input type="number" class="perectange-input" name="vacancy" bind:value={$vacancy} placeholder="%"> <span>%</span> 
+        </div>
     </div>
 
     <div>
         <label for="capEx">Capital Expenditure:</label>
-        <input type="number" class="perectange-input" name="capEx" bind:value={$capEx}> 
+        <div class="input-container">
+            <input type="number" class="perectange-input" name="capEx" bind:value={$capEx}> <span>%</span> 
+        </div>
     </div>
 
     <div>
         <label for="management">Management Fees:</label>
-        <input type="number" class="perectange-input" name="management" bind:value={$management}>
+        <div class="input-container">
+            <input type="number" class="perectange-input" name="management" bind:value={$management}><span>%</span> 
+        </div>
     </div>
 
     <div>
@@ -93,12 +101,14 @@
         position: relative;
     }
 
-    .perectange-input::after {
+    .input-container {
+        position: relative;
+    }
+
+    span {
         position: absolute;
-        bottom: 0;
-        right: 100%;
-        content: "A";
-        height: 20px;
-        width: 20px;
+        top: 10%;
+        left: 50%;
+        color: grey;
     }
 </style>
