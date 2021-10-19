@@ -8,7 +8,7 @@
 
 <Transition>
 <main>
-    <h2><a href="real-estate-calculator">Real Estate Investor Calculator</a></h2>    
+    <h2><a href="real-estate-home">Real Estate Investor Calculator</a></h2>    
     <h2><a href="music-streaming">Music Streaming Estimator</a></h2>
     <p> 
         I created a Numbers spreadsheet for estimating music streaming payouts. 

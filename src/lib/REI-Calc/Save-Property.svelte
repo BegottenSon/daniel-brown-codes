@@ -9,7 +9,7 @@
     let id = 1000;
     let myProperties = []
 
-//COLLECTING DATA AND HANDLING OBJECTS
+//COLLECTING DATA FOR SAVING
     function collectData() {
         for(let group in savedAnalysis) {
             checkoutObject(savedAnalysis[group])
