@@ -1,13 +1,13 @@
 <script>
-	export let segment;
+	import { page } from '$app/stores';
 </script>
 
 <nav>
 	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href="/" id="home">home</a></li>
-		<li><a aria-current="{segment === 'blog' ? 'page' : undefined}" href="/blog" id="thoughts">my thoughts</a></li>
-		<li><a aria-current="{segment === 'my-music' ? 'page' : undefined}" href="/my-music" id="music">my music</a></li>
-		<li><a aria-current="{segment === 'my-code' ? 'page' : undefined}" href="/my-code" id="code">my code</a></li>
+		<li><a class:active={$page.path === '/'} href="/" id="home">home</a></li>
+		<li><a class:active={$page.path === '/blog'} href="/blog" id="thoughts">my thoughts</a></li>
+		<li><a class:active={$page.path === '/my-music'} href="/my-music" id="music">my music</a></li>
+		<li><a class:active={$page.path === '/my-code'} href="/my-code" id="code">my code</a></li>
 	</ul>
 </nav>
 
@@ -37,17 +37,17 @@
 		color: var(--accent);
 	}
 
-	[aria-current] {
-		position: relative;
-		display: inline-block;
+	.active {
+		color: var(--accent);
 	}
 
-	[aria-current]::after {
+	.active::after {
 		position: absolute;
 		content: '';
-		width: calc(100% - 1em );
-		height: 2px;
+		width: calc(100% - 1em);
+		height: 4px;
 		background-color: var(--accent);
+		border-radius: 20px;
 		display: block;
 		bottom: -1px;
 		transition: ease-in-out 400ms;
