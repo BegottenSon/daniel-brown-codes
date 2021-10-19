@@ -41,4 +41,32 @@
 
 <section class="save-section">
     <button on:click={save}>Save</button>
+    <a href="real-estate-home">Home</a>
 </section>
+
+<style>
+    section {
+        /* background-color: var(--dark-blue);
+        padding: 1em;
+        border-radius: 8px; */
+        margin-block-start: 1em;
+    }
+
+    button, a {
+        border-radius: 8px;
+        color: var(--soft-white);
+        font-size: 1em;
+    }
+
+    button {
+        background-color: rgb(54, 163, 54);
+        border: 0.5em solid rgb(54, 163, 54);
+
+    }
+    
+    a {
+        background-color: var(--blue);
+        border: 0.5em solid var(--blue);
+        text-decoration: none;
+    }
+</style>
