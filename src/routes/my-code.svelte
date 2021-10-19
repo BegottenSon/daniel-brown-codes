@@ -8,7 +8,12 @@
 
 <Transition>
 <main>
-    <h2><a href="real-estate-home">Real Estate Investor Calculator</a></h2>    
+    <h2><a href="real-estate-home">Real Estate Investor Calculator</a></h2>
+    <p>
+        So, real estate investment have been turning me on. As a way of killing two birds with one stone, 
+        I decided to learn how to analyze a deal while learning how to code such calculator. Instead of 
+        rigging up a remote storage, I'm only using local storage to save analysis. Enjoy this calculator!
+    </p>  
     <h2><a href="music-streaming">Music Streaming Estimator</a></h2>
     <p> 
         I created a Numbers spreadsheet for estimating music streaming payouts. 
