@@ -68,8 +68,10 @@
         {#each myProperties as property}
             <section class="card" on:click={load(property.id)}>
                 <img class="cover-pic" src="https://res.cloudinary.com/begottenson/image/upload/c_scale,e_saturation:-56,w_500/v1634651658/house-1836070_1280_yyapxi.jpg" alt="cover ">
-                <h2>{property.property.address}</h2>
-                <h3>{property.property.city}, {property.property.state}</h3>
+                <div class="address">
+                    <h2>{property.property.address}</h2>
+                    <h3>{property.property.city}, {property.property.state}</h3>
+                </div>
                 <h3>Purchase Price: ${property.purchase_info.price.toFixed(0).replace(commaForDollars, ",")}</h3>
                 <div class="button-container">
                     <button on:click={load(property.id)}>Load</button>
@@ -87,11 +89,14 @@
         padding: 1em;
         max-width: 60ch;
         gap: 1em;
-        /* background-color: rgb(44, 5, 18); */
     }
 
     h1 {
         justify-self: center;
+    }
+
+    .address {
+        margin-block-end: 1em;
     }
 
     .list-container {
@@ -106,7 +111,7 @@
         flex-direction: column;
         padding: 1em;
         background-color: rgb(43, 26, 117);
-        border-radius: 4px;
+        border-radius: 8px;
         transition: ease 300ms;
     }
 
@@ -116,11 +121,13 @@
     }
 
     .cover-pic {
+        border-radius: 4px;
         opacity: 0.3;
         filter: saturate(0.2);
     }
 
-    section > h3 {
+    div > h3 {
+        margin: 0;
         font-size: smaller;
     }
 
