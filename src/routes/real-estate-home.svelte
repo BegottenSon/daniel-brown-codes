@@ -101,13 +101,14 @@
 
     .list-container {
         display: flex;
+        gap: 1em;
     }
 
     .card {
         display: flex;
         justify-content: space-between;
-        height: 45vh;
-        width: 20vw;
+        height: 300px;
+        width: 200px;
         flex-direction: column;
         padding: 1em;
         background-color: rgb(43, 26, 117);
@@ -178,9 +179,8 @@
     }
 
     @media(max-width: 600px) {
-        .card {
-            height: 30vh;
-            width: 40vw;
+        .list-container {
+            justify-content: center;
         }
     }
 </style>
