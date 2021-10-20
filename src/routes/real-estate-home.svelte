@@ -101,6 +101,7 @@
 
     .list-container {
         display: flex;
+        flex-wrap: wrap;
         gap: 1em;
     }
 
