@@ -3,6 +3,11 @@
 
     let f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18;
 
+    f5 = true;
+    f6 = true;
+    f12 = true;
+    f18 = true;
+
     function handleButtons(e) {
         let value = e.target.value;
         let name = e.target.name;
@@ -174,16 +179,18 @@
     }
 
     button {
-        background-color: var(--accent);
-        border-color: var(--accent);
+        background-color: var(--blue);
+        border-color: var(--blue);
         border-radius: 4px;
         color: var(--soft-white);
-        width: 100px;
+        width: 120px;
+        height: 35px;
+        font-size: 1em;
     }
 
     .f1, .f2, .f3, .f4, .f5, .f6, .f7, .f8 , .f9, .f10, .f11, .f12, .f13, .f14, .f15, .f16, .f17, .f18 {
-        background-color: var(--blue);
-        border-color: var(--blue);
+        background-color: var(--accent);
+        border-color: var(--accent);
     }
 
     .percentage-section {

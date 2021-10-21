@@ -41,14 +41,12 @@
 
 <section class="save-section">
     <button on:click={save}>Save</button>
+    <a href="real-estate-calculator">Back</a>
     <a href="real-estate-home">Home</a>
 </section>
 
 <style>
     section {
-        /* background-color: var(--dark-blue);
-        padding: 1em;
-        border-radius: 8px; */
         margin-block-start: 1em;
     }
 
