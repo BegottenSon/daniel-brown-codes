@@ -5,7 +5,8 @@
     let newKey;
     let savedAnalysis;
     let id = 1000;
-    let myProperties = []
+    let myProperties = [];
+    let saved = false;
 
 //COLLECTING DATA FOR SAVING
     function collectData() {
@@ -26,9 +27,10 @@
 
 //BUTTON FUNCTIONS
     function save() {
-        savedAnalysis = Analysis
-        collectData()
-        localStorage.setItem('myProperties', JSON.stringify(myProperties))
+        savedAnalysis = Analysis;
+        collectData();
+        localStorage.setItem('myProperties', JSON.stringify(myProperties));
+        saved = true;
     }
 
     onMount(() => {
@@ -40,13 +42,21 @@
 </script>
 
 <section class="save-section">
-    <button on:click={save}>Save</button>
+    {#if saved}
+    <div class="checkmark">
+        <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path d="M27.538 46.38 7.921 26.763 0 34.683l27.478 27.478.105-.106.061.061L72 17.76l-7.921-7.921L27.538 46.38Z" fill="#ebebeb"/></svg>
+    </div>
+     {:else} 
+     <button on:click={save}>Save</button>
+    {/if}
     <a href="real-estate-calculator">Back</a>
     <a href="real-estate-home">Home</a>
 </section>
 
 <style>
     section {
+        display: flex;
+        gap: 0.8em;
         margin-block-start: 1em;
     }
 
@@ -66,5 +76,19 @@
         background-color: var(--blue);
         border: 0.5em solid var(--blue);
         text-decoration: none;
+    }
+
+    svg {
+        height: 1.2em;
+    }
+
+    .checkmark {
+        display: grid;
+        place-items: center;
+        height: 1.5em;
+        width: 2.5em;
+        background-color: rgb(54, 163, 54);
+        border: 0.5em solid rgb(54, 163, 54);
+        border-radius: 8px;
     }
 </style>

@@ -1,13 +1,13 @@
 <script>
     import { propertyTax, insurance, repairs, vacancy, management, capEx, electricity, gas, water, hoa, garbage, other } from "./calc-store";
-
+//SETTINGS FOR REACTIVE CLASSES
     let f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18;
-
     f5 = true;
     f6 = true;
     f12 = true;
     f18 = true;
-
+    
+//FUNCTION TO HANDLE REACTIVE CLASSES
     function handleButtons(e) {
         let value = e.target.value;
         let name = e.target.name;
