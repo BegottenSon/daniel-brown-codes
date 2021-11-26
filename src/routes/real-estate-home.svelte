@@ -60,6 +60,11 @@
         deleteFromArray();
     }
 </script>
+
+<svelte:head>
+    <title>Real Estate Calculator</title>
+</svelte:head>
+
 <main>
     <h1>Real Estate Calculator</h1>
     <p>Welcome to your home page. To get started, tap the "add new" button below. Be sure to save your analysis in order to revisit those properties. Your saved properties will also show up below.</p>
@@ -80,7 +85,7 @@
             </section>
         {/each}
     </section>
-    <p class="disclaimer">Please note that this calculator is meant to be used for informational purposes only. This does not constitue investment advice. The saving of your properties will only be accessible from the current browser you are using right now. To remove the properties, tap the delete button and all corresponding data will be removed for good.</p>
+    <p class="disclaimer">Please note that this calculator is meant to be used for informational purposes only. This does not constitue investment advice. The saving of your properties will only be accessible from the current browser you are using right now. To remove the properties, tap the delete button and all corresponding data will be removed permenantly.</p>
 </main>
 
 <style>

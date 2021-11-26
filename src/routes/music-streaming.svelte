@@ -4,7 +4,7 @@
         {
             name: "Apple Music",
             id: "apple",
-            pay: 0.00783,
+            pay: 0.0079,
             streams: 0,
             payout: "191,571"
         },
@@ -35,6 +35,13 @@
             pay: 0.0008,
             streams: 0,
             payout: "1,875,000",
+        },
+        {
+            name: "TikTok",
+            id: "tiktok",
+            pay: 0.0021,
+            streams: 0,
+            payout: "714,286",
         }
     ]
     
@@ -51,14 +58,73 @@
 
     //STREAMS NEEDED TO MAKE DESIRED AMOUNT
     let desiredAmount = 1500;
+    let printDesiredAmount = desiredAmount;
 
     function calculateAmount() {
-        for( let platform in platforms) {
-            let thePay = Math.round(desiredAmount / platforms[platform].pay);
-            platforms[platform].payout = thePay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }   
+        if (Number(desiredAmount)) {
+            for( let platform in platforms) {
+                let thePay = Math.round(desiredAmount / platforms[platform].pay);
+                platforms[platform].payout = thePay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            if (desiredAmount === null) {
+                printDesiredAmount = 0
+            } else {
+                printDesiredAmount = desiredAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") 
+            }  
+        } else {
+            desiredAmount = ''
+            printDesiredAmount = 'Please Only Add Numbers'
+        }
     }
 </script>
+
+<svelte:head>
+   <title>Music Streaming Estimator</title>
+</svelte:head>
+<div class="wrapper">
+<h1>Music Streaming Estimator</h1>
+<h2 class="headers">Streaming Payouts By Music Services</h2>
+<p class="instructions">Amount per stream is updated from the most current data available from each streaming service</p>
+<section class="payouts-services">
+        {#each platforms as platform}
+        <div class="service-chart">
+            <h3 class="service-names">{platform.name}</h3>
+            <h3 class="{platform.id} pay"><span class="money-sign">$</span>{platform.pay}</h3>
+        </div>
+        {/each}
+</section>
+<h2 class="headers">Monthly Estimator</h2>
+<p class="instructions">Click on any stream number under each streaming service's name to add the amount of streams you've received:</p>
+<section class="monthly-estimator">
+    <div class="estimator-grid">
+        {#each platforms as platform}
+        <div class="service-card">
+            <h3 class="service-names {platform.id}">{platform.name}</h3>
+                <input class="streams {platform.id}"
+                type="number"
+                bind:value={platform.streams}
+                >
+                <h3 class="{platform.id}" id="payout"><span class="money-sign">$</span>{platform.streams? (platform.pay * platform.streams).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
+            <div class="service-card-bkg"></div>
+        </div>
+        {/each}
+        <h3 class="title stream-title">Total</h3>
+
+        <h3 id="stream-total">{streamTotal ? streamTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
+        <h3 id="payout-total"><span class="money-sign">$</span>{payoutTotal ? payoutTotal.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
+    </div>
+</section>
+<h2 class="headers">Streams Needed to Make ${printDesiredAmount}</h2>
+<p class="instructions">Input the desired amount of money you're looking to make in a month from streaming and the following chart will show the numbers per streaming platform: <input type="number" class="amount-input" bind:value={desiredAmount} on:keyup={calculateAmount}></p>
+<section class="desired-amount">
+    {#each platforms as platform}
+    <div class="payout-group">
+        <h3 class="service-names">{platform.name}</h3>
+        <h3 class="streams {platform.id}">{desiredAmount === undefined ? 0 : platform.payout}</h3>
+    </div>
+    {/each}
+</section>
+</div>
 
 <style>
     .wrapper {
@@ -242,7 +308,11 @@
     }
 
     .youtube {
-        color: #BC2C30;
+        color: #e93b41;
+    }
+
+    .tiktok {
+        color: #5de2ba
     }
 
     @media(max-width: 550px) {
@@ -282,50 +352,3 @@
     }
 </style>
 
-<svelte:head>
-   <title>Music Streaming Estimator</title>
-</svelte:head>
-<div class="wrapper">
-<h1>Music Streaming Estimator</h1>
-<h2 class="headers">Streaming Payouts By Music Services</h2>
-<p class="instructions">Amount per stream is updated from the most current data available from each streaming service</p>
-<section class="payouts-services">
-        {#each platforms as platform}
-        <div class="service-chart">
-            <h3 class="service-names">{platform.name}</h3>
-            <h3 class="{platform.id} pay"><span class="money-sign">$</span>{platform.pay}</h3>
-        </div>
-        {/each}
-</section>
-<h2 class="headers">Monthly Estimator</h2>
-<p class="instructions">Click on any stream number under each streaming service's name to add the amount of streams you're receiving</p>
-<section class="monthly-estimator">
-    <div class="estimator-grid">
-        {#each platforms as platform}
-        <div class="service-card">
-            <h3 class="service-names {platform.id}">{platform.name}</h3>
-                <input class="streams {platform.id}"
-                type="number"
-                bind:value={platform.streams}
-                >
-                <h3 class="{platform.id}" id="payout"><span class="money-sign">$</span>{platform.streams? (platform.pay * platform.streams).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
-            <div class="service-card-bkg"></div>
-        </div>
-        {/each}
-        <h3 class="title stream-title">Total</h3>
-
-        <h3 id="stream-total">{streamTotal ? streamTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
-        <h3 id="payout-total"><span class="money-sign">$</span>{payoutTotal ? payoutTotal.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0}</h3>
-    </div>
-</section>
-<h2 class="headers">Streams Needed to Make ${desiredAmount === undefined ? 0 : desiredAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h2>
-<p class="instructions">Input the desired amount of money you're looking to make in a month from streaming and the following chart will show the numbers per streaming platform: <input type="number" class="amount-input" bind:value={desiredAmount} on:keyup={calculateAmount}></p>
-<section class="desired-amount">
-    {#each platforms as platform}
-    <div class="payout-group">
-        <h3 class="service-names">{platform.name}</h3>
-        <h3 class="streams {platform.id}">{desiredAmount === undefined ? 0 : platform.payout}</h3>
-    </div>
-    {/each}
-</section>
-</div>
