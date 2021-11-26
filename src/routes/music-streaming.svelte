@@ -191,7 +191,7 @@
         width: 100%;
         top: 0;
         left: 0;
-        background-image: linear-gradient(to bottom right, hsl(16, 71%, 53%), hsl(138, 58%, 32%), hsl(272, 51%, 20%));
+        background-image: linear-gradient(to bottom right, hsl(345, 81%, 59%), hsl(340, 58%, 32%), hsl(272, 51%, 20%));
         border: 1px solid var(--box-color);
         border-radius: 8px;
         mix-blend-mode: soft-light;
